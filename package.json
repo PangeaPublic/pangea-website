@@ -19,7 +19,9 @@
     "lint-js": "eslint \"**/*.{ts,tsx}\"",
     "lint-css": "stylelint \"**/*.css\"",
     "prettier": "prettier --check .",
-    "test:coverage": "npm test -- --coverage --watchAll=false"
+    "test:coverage": "npm test -- --coverage --watchAll=false",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +53,7 @@
     "@types/react-dom": "^18.0.8",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-sonarjs": "^0.13.0",
+    "gh-pages": "^4.0.0",
     "prettier": "^2.7.1",
     "stylelint": "^14.14.0",
     "stylelint-config-prettier": "^9.0.3",
