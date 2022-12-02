@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/pangea-website/static/css/main.b8e261c3.css",
-    "main.js": "/pangea-website/static/js/main.028cb3a6.js",
+    "main.css": "/pangea-website/static/css/main.340dbdf1.css",
+    "main.js": "/pangea-website/static/js/main.e0d6ebc0.js",
     "static/js/787.149e4c5d.chunk.js": "/pangea-website/static/js/787.149e4c5d.chunk.js",
+    "static/media/pangea-logo-secondary-120.png": "/pangea-website/static/media/pangea-logo-secondary-120.84da6fe07fcd1548a7d9.png",
+    "static/media/pangea-logo-primary-120.png": "/pangea-website/static/media/pangea-logo-primary-120.c03e0e16e6cefaeb6459.png",
     "index.html": "/pangea-website/index.html",
-    "main.b8e261c3.css.map": "/pangea-website/static/css/main.b8e261c3.css.map",
-    "main.028cb3a6.js.map": "/pangea-website/static/js/main.028cb3a6.js.map",
+    "main.340dbdf1.css.map": "/pangea-website/static/css/main.340dbdf1.css.map",
+    "main.e0d6ebc0.js.map": "/pangea-website/static/js/main.e0d6ebc0.js.map",
     "787.149e4c5d.chunk.js.map": "/pangea-website/static/js/787.149e4c5d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8e261c3.css",
-    "static/js/main.028cb3a6.js"
+    "static/css/main.340dbdf1.css",
+    "static/js/main.e0d6ebc0.js"
   ]
 }
