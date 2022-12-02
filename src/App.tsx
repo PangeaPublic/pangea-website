@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
-
 import classNames from "classnames";
+
+import DesktopMenu from "./DesktopMenu";
 
 import LogoPrimary from "./pangea-logo-primary-120.png";
 import LogoSecondary from "./pangea-logo-secondary-120.png";
@@ -22,24 +23,7 @@ const App = () => {
             <img className="logo-primary" src={LogoPrimary} alt="Pangea" />
             <img className="logo-secondary" src={LogoSecondary} alt="Pangea" />
           </div>
-          <nav className="desktop-menu">
-            <ul>
-              <li>
-                <a href="/" className="selected">
-                  Who we are
-                </a>
-              </li>
-              <li>
-                <a href="/">What we do</a>
-              </li>
-              <li>
-                <a href="/">Get involved</a>
-              </li>
-              <li>
-                <a href="/">Pangea press</a>
-              </li>
-            </ul>
-          </nav>
+          <DesktopMenu />
           <button
             className={classNames("hamburger-menu-button", {
               "is-open": isHamburgerMenuOpen,
