@@ -3,3 +3,26 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
+
+.site-main-inner-wrapper {
+  max-width: 1200px;
+  padding: 1em;
+  margin-inline: auto;
+  background-color: var(--color-white);
+  height: 100%;
+}
+
+.site-main-inner-wrapper h1 {
+  margin-bottom: 0.5em;
+}
+
+.site-main-inner-wrapper p {
+  margin-bottom: 1em;
+}
+
+.site-footer-inner-wrapper {
+  max-width: 1200px;
+  padding: 1em;
+  margin-inline: auto;
+  height: 100%;
+}
