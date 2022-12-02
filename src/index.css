@@ -13,10 +13,13 @@ body,
 }
 
 body {
-  --color-yellow-hue: 53deg;
-  --color-yellow: hsl(var(--color-yellow-hue) 95% 50%);
+  --color-yellow: hsl(53deg 95% 50%);
+  --color-yellow-dark: hsl(49deg 95% 49%);
+  --color-yellow-pale: hsl(53deg 96% 63%);
   --color-white: hsl(0deg 0% 100%);
   --color-black: hsl(0deg 0% 0%);
+  --color-black-50: hsla(0deg 0% 0% / 50%);
+  --color-black-25: hsla(0deg 0% 0% / 25%);
 
   font-family: Outfit, sans-serif;
   font-size: 20px;
