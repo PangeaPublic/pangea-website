@@ -1,6 +1,15 @@
+import { FaFacebook, FaEnvelope, FaLinkedin } from "react-icons/fa";
+
 import SiteHeader from "./SiteHeader";
 
 import "./App.css";
+
+const publishedYear = 2022;
+const currentYear = new Date().getFullYear();
+const copyrightYear =
+  currentYear > publishedYear
+    ? `${publishedYear}-${currentYear}`
+    : `${publishedYear}`;
 
 const App = () => (
   <div className="site">
@@ -25,9 +34,35 @@ const App = () => (
     <footer className="site-footer">
       <div className="site-footer-inner-wrapper">
         <div>
-          <div>Copyright stuff</div>
-          <div>Contact</div>
-          <div>Social stuff</div>
+          <div>
+            <p className="copyright">
+              © {copyrightYear} Pangea. All rights reserved.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <p className="social-heading">Contact Pangea</p>
+            <nav className="social-icons">
+              <ul>
+                <li>
+                  <a href="/">
+                    <FaEnvelope />
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    <FaFacebook />
+                  </a>
+                </li>
+                <li>
+                  <a href="/">
+                    <FaLinkedin />
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </footer>
