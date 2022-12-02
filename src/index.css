@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -8,4 +10,14 @@ html,
 body,
 #root {
   height: 100%;
+}
+
+body {
+  --color-yellow-hue: 53deg;
+  --color-yellow: hsl(var(--color-yellow-hue) 95% 50%);
+  --color-white: hsl(0deg 0% 100%);
+  --color-black: hsl(0deg 0% 0%);
+
+  font-family: Outfit, sans-serif;
+  background-color: var(--color-yellow);
 }
