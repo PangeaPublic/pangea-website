@@ -44,12 +44,17 @@ const MobileMenu = () => {
           </li>
           <li>
             <a href="/" {...(!isMobileMenuOpen && { tabIndex: -1 })}>
-              Get involved
+              Pangea press
             </a>
           </li>
           <li>
             <a href="/" {...(!isMobileMenuOpen && { tabIndex: -1 })}>
-              Pangea press
+              Resources
+            </a>
+          </li>
+          <li>
+            <a href="/" {...(!isMobileMenuOpen && { tabIndex: -1 })}>
+              Get involved
             </a>
           </li>
         </ul>
