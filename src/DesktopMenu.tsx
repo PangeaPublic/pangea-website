@@ -12,10 +12,13 @@ const DesktopMenu = () => (
         <a href="/">What we do</a>
       </li>
       <li>
-        <a href="/">Get involved</a>
+        <a href="/">Pangea press</a>
       </li>
       <li>
-        <a href="/">Pangea press</a>
+        <a href="/">Resources</a>
+      </li>
+      <li>
+        <a href="/">Get involved</a>
       </li>
     </ul>
   </nav>

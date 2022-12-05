@@ -12,18 +12,25 @@
 .desktop-menu > ul {
   display: flex;
   list-style-type: none;
-  gap: 5em;
+  gap: 3em;
 }
 
 @media (max-width: 1150px) {
   .desktop-menu > ul {
-    gap: 3em;
+    gap: 2em;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
   .desktop-menu > ul {
-    gap: 2em;
+    gap: 1.5em;
+  }
+}
+
+@media (max-width: 960px) {
+  .desktop-menu > ul {
+    font-size: 16px;
+    gap: 1em;
   }
 }
 

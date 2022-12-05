@@ -33,24 +33,42 @@
   height: 6em;
 }
 
-.logo-wrapper > img.logo-primary {
+.logo-wrapper > img.logo-desktop {
   display: block;
 }
 
-.logo-wrapper > img.logo-secondary {
+.logo-wrapper > img.logo-tablet {
   display: none;
 }
 
-@media (max-width: 840px) {
-  .logo-wrapper > img {
-    height: 3em;
-  }
+.logo-wrapper > img.logo-mobile {
+  display: none;
+}
 
-  .logo-wrapper > img.logo-primary {
+@media (max-width: 1200px) {
+  .logo-wrapper > img.logo-desktop {
     display: none;
   }
 
-  .logo-wrapper > img.logo-secondary {
+  .logo-wrapper > img.logo-tablet {
+    display: block;
+  }
+
+  .logo-wrapper > img.logo-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 840px) {
+  .logo-wrapper > img.logo-desktop {
+    display: none;
+  }
+
+  .logo-wrapper > img.logo-tablet {
+    display: none;
+  }
+
+  .logo-wrapper > img.logo-mobile {
     display: block;
   }
 }

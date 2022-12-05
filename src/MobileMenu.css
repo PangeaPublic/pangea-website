@@ -9,40 +9,48 @@
   box-shadow: 0 0 0.75em inset var(--color-yellow-dark);
   cursor: pointer;
   background-color: var(--color-yellow);
-  align-items: center;
-  justify-content: center;
 }
 
 .mobile-menu-button > div {
   position: absolute;
   width: 60%;
-  height: 5%;
+  height: 3px;
+  top: calc(50% - 1.5px);
+  left: 20%;
   background-color: var(--color-black);
-  transition: transform 0.35s;
+  transition: transform 0.35s, opacity 0.35s, top 0.35s;
 }
 
 .mobile-menu-button > div:nth-child(1) {
-  transform: translateY(-300%) rotate(0);
+  transform: rotate(0deg);
+  top: calc(50% - 1.5px - 20%);
 }
 
 .mobile-menu-button > div:nth-child(2) {
-  transform: translateY(0) rotate(0);
+  transform: rotate(0deg);
+  opacity: 1;
+  top: calc(50% - 1.5px);
 }
 
 .mobile-menu-button > div:nth-child(3) {
-  transform: translateY(300%) rotate(0);
+  transform: rotate(0deg);
+  top: calc(50% - 1.5px + 20%);
 }
 
 .mobile-menu-button.is-open > div:nth-child(1) {
-  transform: translateY(0) rotate(225deg);
+  transform: rotate(225deg);
+  top: calc(50% - 1.5px);
 }
 
 .mobile-menu-button.is-open > div:nth-child(2) {
-  transform: translateY(0) rotate(315deg);
+  transform: rotate(315deg);
+  opacity: 0;
+  top: calc(50% - 1.5px);
 }
 
 .mobile-menu-button.is-open > div:nth-child(3) {
-  transform: translateY(0) rotate(315deg);
+  transform: rotate(315deg);
+  top: calc(50% - 1.5px);
 }
 
 @media (max-width: 840px) {
