@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import { Link, useLocation } from "react-router-dom";
 import classNames from "classnames";
 
 import "./MobileMenu.css";
@@ -9,6 +10,8 @@ const MobileMenu = () => {
   const onHandleMobileMenuClick = useCallback(() => {
     setIsMobileMenuOpen((previousState) => !previousState);
   }, []);
+
+  const location = useLocation();
 
   return (
     <>
@@ -29,33 +32,57 @@ const MobileMenu = () => {
       >
         <ul>
           <li>
-            <a
-              href="/"
-              className="selected"
+            <Link
+              to="/"
+              className={classNames({ selected: location.pathname === "/" })}
               {...(!isMobileMenuOpen && { tabIndex: -1 })}
             >
               Who we are
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/" {...(!isMobileMenuOpen && { tabIndex: -1 })}>
+            <Link
+              to="/what-we-do"
+              className={classNames({
+                selected: location.pathname === "/what-we-do",
+              })}
+              {...(!isMobileMenuOpen && { tabIndex: -1 })}
+            >
               What we do
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/" {...(!isMobileMenuOpen && { tabIndex: -1 })}>
+            <Link
+              to="/press"
+              className={classNames({
+                selected: location.pathname === "/press",
+              })}
+              {...(!isMobileMenuOpen && { tabIndex: -1 })}
+            >
               Pangea press
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/" {...(!isMobileMenuOpen && { tabIndex: -1 })}>
+            <Link
+              to="/resources"
+              className={classNames({
+                selected: location.pathname === "/resources",
+              })}
+              {...(!isMobileMenuOpen && { tabIndex: -1 })}
+            >
               Resources
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/" {...(!isMobileMenuOpen && { tabIndex: -1 })}>
+            <Link
+              to="/get-involved"
+              className={classNames({
+                selected: location.pathname === "/get-involved",
+              })}
+              {...(!isMobileMenuOpen && { tabIndex: -1 })}
+            >
               Get involved
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
