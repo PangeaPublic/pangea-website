@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchPage } from "./Api";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Loader from "./Loader";
 
 import type { Entry } from "contentful";
 import type { Page } from "./Api";
@@ -20,7 +21,11 @@ const WhoWeAre = () => {
   return (
     <>
       <h1>Who we are</h1>
-      {content && documentToReactComponents(content.fields.content as Document)}
+      {content ? (
+        documentToReactComponents(content.fields.content as Document)
+      ) : (
+        <Loader />
+      )}
     </>
   );
 };
