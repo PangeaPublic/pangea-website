@@ -1,6 +1,6 @@
 import { createClient } from "contentful";
 
-import type { EntryFields } from "contentful";
+import type { EntryFields, Asset } from "contentful";
 
 const client = createClient({
   space: "xebeoitu79hp",
@@ -12,10 +12,18 @@ export type PressRelease = {
   date: EntryFields.Date;
   title: EntryFields.Text;
   vanityUrl: EntryFields.Text;
+  image?: EntryFields.Link<Asset>;
 };
 
 const fetchPressReleases = () =>
-  client.getEntries<PressRelease>({ content_type: "pressRelease" });
+  client.getEntries<PressRelease>({ content_type: "pressRelease", include: 1 });
+
+const fetchPressRelease = (slug: string) =>
+  client.getEntries<PressRelease>({
+    content_type: "pressRelease",
+    include: 1,
+    "fields.vanityUrl[match]": slug,
+  });
 
 export type Event = {
   description: EntryFields.RichText;
@@ -46,4 +54,10 @@ export type Page = {
 
 const fetchPage = (entryId: string) => client.getEntry<Page>(entryId);
 
-export { fetchPressReleases, fetchEvents, fetchResources, fetchPage };
+export {
+  fetchPressReleases,
+  fetchPressRelease,
+  fetchEvents,
+  fetchResources,
+  fetchPage,
+};

@@ -3,6 +3,7 @@ import SiteHeader from "./SiteHeader";
 import WhoWeAre from "./WhoWeAre";
 import WhatWeDo from "./WhatWeDo";
 import Press from "./Press";
+import Article from "./Article";
 import Resources from "./Resources";
 import GetInvolved from "./GetInvolved";
 import Footer from "./Footer";
@@ -18,6 +19,7 @@ const App = () => (
           <Route path="/" element={<WhoWeAre />} />
           <Route path="/what-we-do" element={<WhatWeDo />} />
           <Route path="/press" element={<Press />} />
+          <Route path="/press/:slug" element={<Article />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/get-involved" element={<GetInvolved />} />
         </Routes>
