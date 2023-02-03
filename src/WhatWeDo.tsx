@@ -1,19 +1,28 @@
-const WhatWeDo = () => (
-  <>
-    <h1>What we do</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dolores
-      laboriosam, esse dignissimos fugit architecto officiis in, porro ipsam,
-      blanditiis labore ex aspernatur hic voluptatem nam reprehenderit commodi
-      laudantium repudiandae.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, expedita
-      consequatur odit hic suscipit aut! Provident quisquam, cupiditate
-      consequatur neque vero adipisci delectus cum cumque dolor laborum, nostrum
-      fugiat sint!
-    </p>
-  </>
-);
+import { useState, useEffect } from "react";
+import { fetchPage } from "./Api";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+import type { Entry } from "contentful";
+import type { Page } from "./Api";
+import type { Document } from "@contentful/rich-text-types";
+
+const entryId = "3zpIAoytGsVEiWNMNyM1yP";
+
+const WhatWeDo = () => {
+  const [content, setContent] = useState<Entry<Page>>();
+
+  useEffect(() => {
+    fetchPage(entryId).then((response) => {
+      setContent(response);
+    });
+  }, []);
+
+  return (
+    <>
+      <h1>What we do</h1>
+      {content && documentToReactComponents(content.fields.content as Document)}
+    </>
+  );
+};
 
 export default WhatWeDo;

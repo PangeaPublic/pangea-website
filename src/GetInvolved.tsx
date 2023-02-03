@@ -1,19 +1,28 @@
-const Resources = () => (
-  <>
-    <h1>Get involved</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dolores
-      laboriosam, esse dignissimos fugit architecto officiis in, porro ipsam,
-      blanditiis labore ex aspernatur hic voluptatem nam reprehenderit commodi
-      laudantium repudiandae.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, expedita
-      consequatur odit hic suscipit aut! Provident quisquam, cupiditate
-      consequatur neque vero adipisci delectus cum cumque dolor laborum, nostrum
-      fugiat sint!
-    </p>
-  </>
-);
+import { useState, useEffect } from "react";
+import { fetchPage } from "./Api";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-export default Resources;
+import type { Entry } from "contentful";
+import type { Page } from "./Api";
+import type { Document } from "@contentful/rich-text-types";
+
+const entryId = "2rjMZncKk5wxWYN16gcSIj";
+
+const GetInvolved = () => {
+  const [content, setContent] = useState<Entry<Page>>();
+
+  useEffect(() => {
+    fetchPage(entryId).then((response) => {
+      setContent(response);
+    });
+  }, []);
+
+  return (
+    <>
+      <h1>Get involved</h1>
+      {content && documentToReactComponents(content.fields.content as Document)}
+    </>
+  );
+};
+
+export default GetInvolved;

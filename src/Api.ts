@@ -17,4 +17,33 @@ export type PressRelease = {
 const fetchPressReleases = () =>
   client.getEntries<PressRelease>({ content_type: "pressRelease" });
 
-export { fetchPressReleases };
+export type Event = {
+  description: EntryFields.RichText;
+  time: EntryFields.Date;
+  title: EntryFields.Text;
+  vanityUrl: EntryFields.Text;
+  location: EntryFields.Text;
+  registrationUrl: EntryFields.Text;
+  facebookEventLink: EntryFields.Text;
+};
+
+const fetchEvents = () => client.getEntries<Event>({ content_type: "event" });
+
+export type Resource = {
+  content: EntryFields.RichText;
+  title: EntryFields.Text;
+  vanityUrl: EntryFields.Text;
+};
+
+const fetchResources = () =>
+  client.getEntries<Resource>({ content_type: "resource" });
+
+export type Page = {
+  content: EntryFields.RichText;
+  title: EntryFields.Text;
+  vanityUrl: EntryFields.Text;
+};
+
+const fetchPage = (entryId: string) => client.getEntry<Page>(entryId);
+
+export { fetchPressReleases, fetchEvents, fetchResources, fetchPage };
