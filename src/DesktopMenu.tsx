@@ -30,7 +30,9 @@ const DesktopMenu = () => {
         <li>
           <Link
             to="/press"
-            className={classNames({ selected: location.pathname === "/press" })}
+            className={classNames({
+              selected: location.pathname.startsWith("/press"),
+            })}
           >
             Pangea press
           </Link>

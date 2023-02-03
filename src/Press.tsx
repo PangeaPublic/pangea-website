@@ -1,36 +1,71 @@
 import { useState, useEffect } from "react";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-
+import { Link } from "react-router-dom";
 import { fetchPressReleases } from "./Api";
 
-import type { Entry } from "contentful";
-import type { Document } from "@contentful/rich-text-types";
-
+import type { Entry, Asset } from "contentful";
 import type { PressRelease } from "./Api";
 
-const Press = () => {
-  const [pressReleases, setPressReleases] = useState<Entry<PressRelease>[]>([]);
+import "./Press.css";
+import Loader from "./Loader";
 
-  useEffect(() => {
-    fetchPressReleases().then((response) => {
-      setPressReleases(response.items);
-    });
-  }, []);
+interface PressLinkProps {
+  pressRelease: Entry<PressRelease>;
+  assets: Array<Asset>;
+}
 
-  console.log(pressReleases);
+const PressLink = ({ pressRelease, assets }: PressLinkProps) => {
+  const imageUrl = pressRelease.fields.image
+    ? assets.find((asset) => asset.sys.id === pressRelease.fields.image?.sys.id)
+        ?.fields.file.url ?? null
+    : null;
 
   return (
-    <>
-      <h1>Pangea Press</h1>
-      {pressReleases.map((pressRelease) => (
-        <article key={pressRelease.sys.id}>
+    <Link
+      to={`/press/${pressRelease.fields.vanityUrl}`}
+      className="press-release-link"
+    >
+      <article>
+        {imageUrl !== null && <img src={imageUrl} alt="" />}
+        <div className="title-and-date">
           <h2>{pressRelease.fields.title}</h2>
           <time dateTime={pressRelease.fields.date}>
             {new Date(pressRelease.fields.date).toLocaleDateString()}
           </time>
-          {documentToReactComponents(pressRelease.fields.content as Document)}
-        </article>
-      ))}
+        </div>
+      </article>
+    </Link>
+  );
+};
+
+const Press = () => {
+  const [pressReleases, setPressReleases] = useState<Entry<PressRelease>[]>([]);
+  const [pressReleaseAssets, setPressReleaseAssets] = useState<Array<Asset>>(
+    []
+  );
+
+  useEffect(() => {
+    fetchPressReleases().then((response) => {
+      setPressReleases(response.items);
+      setPressReleaseAssets(response.includes.Asset);
+    });
+  }, []);
+
+  return (
+    <>
+      <h1>Pangea Press</h1>
+      {pressReleases.length === 0 ? (
+        <Loader />
+      ) : (
+        <>
+          {pressReleases.map((pressRelease) => (
+            <PressLink
+              key={pressRelease.sys.id}
+              assets={pressReleaseAssets}
+              pressRelease={pressRelease}
+            />
+          ))}
+        </>
+      )}
     </>
   );
 };
