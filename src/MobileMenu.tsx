@@ -55,7 +55,7 @@ const MobileMenu = () => {
             <Link
               to="/press"
               className={classNames({
-                selected: location.pathname === "/press",
+                selected: location.pathname.startsWith("/press"),
               })}
               {...(!isMobileMenuOpen && { tabIndex: -1 })}
             >
