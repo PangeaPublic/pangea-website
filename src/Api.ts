@@ -31,11 +31,19 @@ export type Event = {
   title: EntryFields.Text;
   vanityUrl: EntryFields.Text;
   location: EntryFields.Text;
+  locationUrl: EntryFields.Text;
   registrationUrl: EntryFields.Text;
   facebookEventLink: EntryFields.Text;
 };
 
 const fetchEvents = () => client.getEntries<Event>({ content_type: "event" });
+
+const fetchEvent = (slug: string) =>
+  client.getEntries<Event>({
+    content_type: "event",
+    include: 1,
+    "fields.vanityUrl[match]": slug,
+  });
 
 export type Resource = {
   content: EntryFields.RichText;
@@ -65,6 +73,7 @@ export {
   fetchPressReleases,
   fetchPressRelease,
   fetchEvents,
+  fetchEvent,
   fetchResources,
   fetchResource,
   fetchPage,
