@@ -1,19 +1,56 @@
-const GetInvolved = () => (
-  <>
-    <h1>Resources</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dolores
-      laboriosam, esse dignissimos fugit architecto officiis in, porro ipsam,
-      blanditiis labore ex aspernatur hic voluptatem nam reprehenderit commodi
-      laudantium repudiandae.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, expedita
-      consequatur odit hic suscipit aut! Provident quisquam, cupiditate
-      consequatur neque vero adipisci delectus cum cumque dolor laborum, nostrum
-      fugiat sint!
-    </p>
-  </>
-);
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { fetchResources } from "./Api";
 
-export default GetInvolved;
+import type { Entry } from "contentful";
+import type { Resource } from "./Api";
+
+import Loader from "./Loader";
+
+import "./Resources.css";
+
+interface ResourceLinkProps {
+  resource: Entry<Resource>;
+}
+
+const ResourceLink = ({ resource }: ResourceLinkProps) => {
+  return (
+    <Link
+      to={`/resources/${resource.fields.vanityUrl}`}
+      className="resource-link"
+    >
+      <article>
+        <div className="title">
+          <h2>{resource.fields.title}</h2>
+        </div>
+      </article>
+    </Link>
+  );
+};
+
+const Resources = () => {
+  const [resources, setResources] = useState<Entry<Resource>[]>([]);
+
+  useEffect(() => {
+    fetchResources().then((response) => {
+      setResources(response.items);
+    });
+  }, []);
+
+  return (
+    <>
+      <h1>Resources</h1>
+      {resources.length === 0 ? (
+        <Loader />
+      ) : (
+        <>
+          {resources.map((resource) => (
+            <ResourceLink key={resource.sys.id} resource={resource} />
+          ))}
+        </>
+      )}
+    </>
+  );
+};
+
+export default Resources;
