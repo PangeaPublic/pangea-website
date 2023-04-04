@@ -18,7 +18,11 @@ const EventLink = ({ event }: EventLinkProps) => (
       <div className="title-and-date">
         <h2>{event.fields.title}</h2>
         <time dateTime={event.fields.time}>
-          {new Date(event.fields.time).toLocaleDateString()}
+          {new Date(event.fields.time).toLocaleDateString()}{" "}
+          {new Date(event.fields.time).toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
         </time>
       </div>
     </article>
