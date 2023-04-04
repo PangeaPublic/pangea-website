@@ -5,6 +5,7 @@ import WhatWeDo from "./WhatWeDo";
 import Press from "./Press";
 import Article from "./Article";
 import Resources from "./Resources";
+import Resource from "./Resource";
 import GetInvolved from "./GetInvolved";
 import Footer from "./Footer";
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/press" element={<Press />} />
           <Route path="/press/:slug" element={<Article />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/resources/:slug" element={<Resource />} />
           <Route path="/get-involved" element={<GetInvolved />} />
         </Routes>
       </div>
