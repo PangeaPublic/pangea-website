@@ -22,7 +22,9 @@ const WhoWeAre = () => {
     <>
       <h1>Who we are</h1>
       {content ? (
-        documentToReactComponents(content.fields.content as Document)
+        <div className="formatted-content">
+          {documentToReactComponents(content.fields.content as Document)}
+        </div>
       ) : (
         <Loader />
       )}

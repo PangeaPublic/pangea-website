@@ -22,7 +22,9 @@ const GetInvolved = () => {
     <>
       <h1>Get involved</h1>
       {content ? (
-        documentToReactComponents(content.fields.content as Document)
+        <div className="formatted-content">
+          {documentToReactComponents(content.fields.content as Document)}
+        </div>
       ) : (
         <Loader />
       )}
