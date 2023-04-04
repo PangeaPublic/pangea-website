@@ -7,31 +7,31 @@ import Loader from "./Loader";
 
 import type { Entry } from "contentful";
 import type { Document } from "@contentful/rich-text-types";
-import type { PressRelease } from "./Api";
+import type { Resource } from "./Api";
 
-const Resource = () => {
+const ResourcePage = () => {
   let { slug } = useParams();
 
-  const [pressRelease, setPressRelease] = useState<Entry<PressRelease> | null>(
-    null
-  );
+  const [resource, setResource] = useState<Entry<Resource> | null>(null);
 
   useEffect(() => {
     fetchResource(slug ?? "").then((response) => {
-      setPressRelease(response.items[0]);
+      setResource(response.items[0]);
     });
   }, [slug]);
 
-  if (pressRelease === null) {
+  if (resource === null) {
     return <Loader />;
   }
 
   return (
     <article className="resource">
-      <h1>{pressRelease.fields.title}</h1>
-      {documentToReactComponents(pressRelease.fields.content as Document)}
+      <h1>{resource.fields.title}</h1>
+      <div className="formatted-content">
+        {documentToReactComponents(resource.fields.content as Document)}
+      </div>
     </article>
   );
 };
 
-export default Resource;
+export default ResourcePage;

@@ -22,7 +22,9 @@ const WhatWeDo = () => {
     <>
       <h1>What we do</h1>
       {content ? (
-        documentToReactComponents(content.fields.content as Document)
+        <div className="formatted-content">
+          {documentToReactComponents(content.fields.content as Document)}
+        </div>
       ) : (
         <Loader />
       )}

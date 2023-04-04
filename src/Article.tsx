@@ -38,7 +38,9 @@ const Article = () => {
         <img className="image" src={pressReleaseAsset.fields.file.url} alt="" />
       )}
       <h1>{pressRelease.fields.title}</h1>
-      {documentToReactComponents(pressRelease.fields.content as Document)}
+      <div className="formatted-content">
+        {documentToReactComponents(pressRelease.fields.content as Document)}
+      </div>
     </article>
   );
 };
