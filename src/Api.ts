@@ -46,6 +46,13 @@ export type Resource = {
 const fetchResources = () =>
   client.getEntries<Resource>({ content_type: "resource" });
 
+const fetchResource = (slug: string) =>
+  client.getEntries<PressRelease>({
+    content_type: "resource",
+    include: 1,
+    "fields.vanityUrl[match]": slug,
+  });
+
 export type Page = {
   content: EntryFields.RichText;
   title: EntryFields.Text;
@@ -59,5 +66,6 @@ export {
   fetchPressRelease,
   fetchEvents,
   fetchResources,
+  fetchResource,
   fetchPage,
 };
