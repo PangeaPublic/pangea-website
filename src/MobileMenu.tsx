@@ -66,11 +66,22 @@ const MobileMenu = () => {
             <Link
               to="/resources"
               className={classNames({
-                selected: location.pathname === "/resources",
+                selected: location.pathname.startsWith("/resources"),
               })}
               {...(!isMobileMenuOpen && { tabIndex: -1 })}
             >
               Resources
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/events"
+              className={classNames({
+                selected: location.pathname.startsWith("/events"),
+              })}
+              {...(!isMobileMenuOpen && { tabIndex: -1 })}
+            >
+              Events
             </Link>
           </li>
           <li>
