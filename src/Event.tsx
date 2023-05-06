@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 
 import Loader from "./Loader";
+import { renderOptions } from "./utility";
 
 import type { Entry } from "contentful";
 import type { Document } from "@contentful/rich-text-types";
@@ -38,7 +39,10 @@ const EventPage = () => {
     <article className="event">
       <h1>{event.fields.title}</h1>
       <div className="formatted-content">
-        {documentToReactComponents(event.fields.description as Document)}
+        {documentToReactComponents(
+          event.fields.description as Document,
+          renderOptions
+        )}
       </div>
       <section className="where-when">
         <div>

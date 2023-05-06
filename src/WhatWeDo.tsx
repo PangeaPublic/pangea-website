@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { fetchPage } from "./Api";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
 import Loader from "./Loader";
+import { renderOptions } from "./utility";
 
 import type { Entry } from "contentful";
 import type { Page } from "./Api";
@@ -23,7 +25,10 @@ const WhatWeDo = () => {
       <h1>What we do</h1>
       {content ? (
         <div className="formatted-content">
-          {documentToReactComponents(content.fields.content as Document)}
+          {documentToReactComponents(
+            content.fields.content as Document,
+            renderOptions
+          )}
         </div>
       ) : (
         <Loader />

@@ -62,3 +62,11 @@
 .formatted-content :is(ul, ol) {
   padding-left: 2em;
 }
+
+.formatted-content a {
+  color: var(--color-gold);
+}
+
+.formatted-content a:is(:focus, :hover) {
+  color: inherit;
+}
