@@ -4,6 +4,7 @@ import { fetchPressRelease } from "./Api";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 import Loader from "./Loader";
+import { renderOptions } from "./utility";
 
 import type { Entry, Asset } from "contentful";
 import type { Document } from "@contentful/rich-text-types";
@@ -39,7 +40,10 @@ const Article = () => {
       )}
       <h1>{pressRelease.fields.title}</h1>
       <div className="formatted-content">
-        {documentToReactComponents(pressRelease.fields.content as Document)}
+        {documentToReactComponents(
+          pressRelease.fields.content as Document,
+          renderOptions
+        )}
       </div>
     </article>
   );

@@ -4,6 +4,7 @@ import { fetchResource } from "./Api";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 import Loader from "./Loader";
+import { renderOptions } from "./utility";
 
 import type { Entry } from "contentful";
 import type { Document } from "@contentful/rich-text-types";
@@ -28,7 +29,10 @@ const ResourcePage = () => {
     <article className="resource">
       <h1>{resource.fields.title}</h1>
       <div className="formatted-content">
-        {documentToReactComponents(resource.fields.content as Document)}
+        {documentToReactComponents(
+          resource.fields.content as Document,
+          renderOptions
+        )}
       </div>
     </article>
   );
