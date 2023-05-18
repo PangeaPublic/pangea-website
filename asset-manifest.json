@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/pangea-website/static/css/main.7c33c546.css",
-    "main.js": "/pangea-website/static/js/main.116495d4.js",
+    "main.css": "/pangea-website/static/css/main.66e31dfe.css",
+    "main.js": "/pangea-website/static/js/main.5c0251b3.js",
     "static/js/787.149e4c5d.chunk.js": "/pangea-website/static/js/787.149e4c5d.chunk.js",
+    "static/media/banner-desktop.jpg": "/pangea-website/static/media/banner-desktop.9d4b178ba74b9c61ca14.jpg",
+    "static/media/banner-mobile.jpg": "/pangea-website/static/media/banner-mobile.d00a1fcb73f5022a1c9e.jpg",
     "static/media/pangea-logo-mobile-120.png": "/pangea-website/static/media/pangea-logo-mobile-120.84da6fe07fcd1548a7d9.png",
     "static/media/pangea-logo-tablet-120.png": "/pangea-website/static/media/pangea-logo-tablet-120.c03e0e16e6cefaeb6459.png",
     "static/media/pangea-logo-desktop-120.png": "/pangea-website/static/media/pangea-logo-desktop-120.a5b5473872c861cde626.png",
+    "static/media/get-involved.jpg": "/pangea-website/static/media/get-involved.b12edbe7ac958226e413.jpg",
     "index.html": "/pangea-website/index.html",
-    "main.7c33c546.css.map": "/pangea-website/static/css/main.7c33c546.css.map",
-    "main.116495d4.js.map": "/pangea-website/static/js/main.116495d4.js.map",
+    "main.66e31dfe.css.map": "/pangea-website/static/css/main.66e31dfe.css.map",
+    "main.5c0251b3.js.map": "/pangea-website/static/js/main.5c0251b3.js.map",
     "787.149e4c5d.chunk.js.map": "/pangea-website/static/js/787.149e4c5d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c33c546.css",
-    "static/js/main.116495d4.js"
+    "static/css/main.66e31dfe.css",
+    "static/js/main.5c0251b3.js"
   ]
 }
