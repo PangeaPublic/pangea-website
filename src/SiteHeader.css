@@ -29,46 +29,50 @@
   display: flex;
 }
 
-.logo-wrapper > img {
+.logo-wrapper a {
+  display: flex;
+}
+
+.logo-wrapper img {
   height: 6em;
 }
 
-.logo-wrapper > img.logo-desktop {
+.logo-wrapper img.logo-desktop {
   display: block;
 }
 
-.logo-wrapper > img.logo-tablet {
+.logo-wrapper img.logo-tablet {
   display: none;
 }
 
-.logo-wrapper > img.logo-mobile {
+.logo-wrapper img.logo-mobile {
   display: none;
 }
 
 @media (max-width: 1200px) {
-  .logo-wrapper > img.logo-desktop {
+  .logo-wrapper img.logo-desktop {
     display: none;
   }
 
-  .logo-wrapper > img.logo-tablet {
+  .logo-wrapper img.logo-tablet {
     display: block;
   }
 
-  .logo-wrapper > img.logo-mobile {
+  .logo-wrapper img.logo-mobile {
     display: none;
   }
 }
 
 @media (max-width: 840px) {
-  .logo-wrapper > img.logo-desktop {
+  .logo-wrapper img.logo-desktop {
     display: none;
   }
 
-  .logo-wrapper > img.logo-tablet {
+  .logo-wrapper img.logo-tablet {
     display: none;
   }
 
-  .logo-wrapper > img.logo-mobile {
+  .logo-wrapper img.logo-mobile {
     display: block;
   }
 }
