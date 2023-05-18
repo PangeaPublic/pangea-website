@@ -29,10 +29,12 @@
 }
 
 .formatted-content {
+  font-family: "Playfair Display", serif;
   line-height: 1.75;
 }
 
 .formatted-content :is(h2, h3, h4, h5) {
+  font-family: Outfit, serif;
   margin-top: 1em;
   margin-bottom: 0.5em;
 }

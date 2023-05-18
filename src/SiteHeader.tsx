@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
 
@@ -11,9 +13,11 @@ const SiteHeader = () => (
   <header className="site-header">
     <div className="site-header-inner-wrapper">
       <div className="logo-wrapper">
-        <img className="logo-desktop" src={LogoDesktop} alt="Pangea" />
-        <img className="logo-tablet" src={LogoTablet} alt="Pangea" />
-        <img className="logo-mobile" src={LogoMobile} alt="Pangea" />
+        <Link to="/">
+          <img className="logo-desktop" src={LogoDesktop} alt="Home" />
+          <img className="logo-tablet" src={LogoTablet} alt="Home" />
+          <img className="logo-mobile" src={LogoMobile} alt="Home" />
+        </Link>
       </div>
       <DesktopMenu />
       <MobileMenu />

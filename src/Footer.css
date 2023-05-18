@@ -16,6 +16,7 @@
 }
 
 .copyright {
+  font-family: "Playfair Display", serif;
   font-size: 16px;
 }
 
@@ -27,6 +28,7 @@
 }
 
 .site-footer-inner-wrapper address {
+  font-family: "Playfair Display", serif;
   font-size: 16px;
   font-style: normal;
   margin-top: 1em;
@@ -65,6 +67,7 @@
 }
 
 .email-address-text {
+  font-family: "Playfair Display", serif;
   font-size: 16px;
 }
 

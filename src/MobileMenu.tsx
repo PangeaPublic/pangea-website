@@ -33,8 +33,10 @@ const MobileMenu = () => {
         <ul>
           <li>
             <Link
-              to="/"
-              className={classNames({ selected: location.pathname === "/" })}
+              to="/who-we-are"
+              className={classNames({
+                selected: location.pathname === "/who-we-are",
+              })}
               {...(!isMobileMenuOpen && { tabIndex: -1 })}
             >
               Who we are
