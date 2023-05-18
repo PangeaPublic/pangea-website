@@ -9,8 +9,8 @@
 }
 
 .splash h2 {
+  font-family: "Playfair Display", serif;
   color: var(--color-yellow);
-  margin-bottom: 0.5em;
   font-size: 48px;
   padding: 0.25em 0.5em;
   text-align: center;
@@ -21,6 +21,7 @@
 }
 
 .splash p {
+  font-family: "Playfair Display", serif;
   color: var(--color-white);
   padding: 0.25em 0.5em;
   font-size: 32px;
