@@ -50,3 +50,30 @@
   color: var(--color-yellow);
   border-color: var(--color-yellow);
 }
+
+.banner-wrapper {
+  display: flex;
+  margin-block: 1em;
+}
+
+.banner-wrapper img {
+  width: 100%;
+}
+
+.banner-wrapper img.banner-desktop {
+  display: block;
+}
+
+.banner-wrapper img.banner-mobile {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .banner-wrapper img.banner-desktop {
+    display: none;
+  }
+
+  .banner-wrapper img.banner-mobile {
+    display: block;
+  }
+}

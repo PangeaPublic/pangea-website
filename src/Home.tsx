@@ -6,6 +6,9 @@ import Loader from "./Loader";
 import type { Entry, Asset } from "contentful";
 import type { Splash } from "./Api";
 
+import BannerDesktop from "./banner-desktop.jpg";
+import BannerMobile from "./banner-mobile.jpg";
+
 import "./Home.css";
 
 const Home = () => {
@@ -49,6 +52,12 @@ const Home = () => {
       ) : (
         <Loader />
       )}
+      <div>
+        <div className="banner-wrapper">
+          <img className="banner-desktop" src={BannerDesktop} alt="" />
+          <img className="banner-mobile" src={BannerMobile} alt="" />
+        </div>{" "}
+      </div>
     </>
   );
 };
