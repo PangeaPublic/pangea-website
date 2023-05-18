@@ -8,8 +8,12 @@ import type { Splash } from "./Api";
 
 import BannerDesktop from "./banner-desktop.jpg";
 import BannerMobile from "./banner-mobile.jpg";
+import WhoWeAreImage from "./who-we-are.jpg";
+import WhatWeDoImage from "./what-we-do.jpg";
+import GetInvolvedImage from "./get-involved.jpg";
 
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [splash, setSplash] = useState<Entry<Splash> | null>(null);
@@ -20,8 +24,6 @@ const Home = () => {
       setSplashImage(response.includes?.Asset[0] ?? null);
     });
   }, []);
-
-  console.log(splash, splashImage?.fields.file.url);
 
   return (
     <>
@@ -56,8 +58,30 @@ const Home = () => {
         <div className="banner-wrapper">
           <img className="banner-desktop" src={BannerDesktop} alt="" />
           <img className="banner-mobile" src={BannerMobile} alt="" />
-        </div>{" "}
+        </div>
       </div>
+      <nav className="quick-navigation">
+        <ul>
+          <li>
+            <Link to="/who-we-are">
+              <img src={WhoWeAreImage} alt="" />
+              <span>Who we are</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/what-we-do">
+              <img src={WhatWeDoImage} alt="" />
+              <span>What we do</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/get-involved">
+              <img src={GetInvolvedImage} alt="" />
+              <span>Get involved</span>
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 };
