@@ -69,6 +69,17 @@ export type Page = {
 
 const fetchPage = (entryId: string) => client.getEntry<Page>(entryId);
 
+export type Splash = {
+  title: EntryFields.Text;
+  description: EntryFields.Text;
+  callToAction: EntryFields.Text;
+  url: EntryFields.Text;
+  image?: EntryFields.Link<Asset>;
+};
+
+const fetchSplash = () =>
+  client.getEntries<Splash>({ content_type: "splash", include: 1, limit: 1 });
+
 export {
   fetchPressReleases,
   fetchPressRelease,
@@ -77,4 +88,5 @@ export {
   fetchResources,
   fetchResource,
   fetchPage,
+  fetchSplash,
 };

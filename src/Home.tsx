@@ -1,38 +1,54 @@
-// import { useState, useEffect } from "react";
-// import { fetchPage } from "./Api";
-// import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { useState, useEffect } from "react";
+import { fetchSplash } from "./Api";
 
-// import Loader from "./Loader";
-// import { renderOptions } from "./utility";
+import Loader from "./Loader";
 
-// import type { Entry } from "contentful";
-// import type { Page } from "./Api";
-// import type { Document } from "@contentful/rich-text-types";
+import type { Entry, Asset } from "contentful";
+import type { Splash } from "./Api";
 
-// const entryId = "2UW7FKlcjNNyP2k3jSxxa8";
+import "./Home.css";
 
 const Home = () => {
-  // const [content, setContent] = useState<Entry<Page>>();
+  const [splash, setSplash] = useState<Entry<Splash> | null>(null);
+  const [splashImage, setSplashImage] = useState<Asset | null>(null);
+  useEffect(() => {
+    fetchSplash().then((response) => {
+      setSplash(response.items[0]);
+      setSplashImage(response.includes?.Asset[0] ?? null);
+    });
+  }, []);
 
-  // useEffect(() => {
-  //   fetchPage(entryId).then((response) => {
-  //     setContent(response);
-  //   });
-  // }, []);
+  console.log(splash, splashImage?.fields.file.url);
 
   return (
     <>
-      <h1>Home</h1>
-      {/* {content ? (
-        <div className="formatted-content">
-          {documentToReactComponents(
-            content.fields.content as Document,
-            renderOptions
-          )}
+      {splash && splashImage ? (
+        <div
+          className="splash"
+          style={{
+            backgroundImage: `url(${splashImage.fields.file.url})`,
+          }}
+        >
+          <h2>
+            <span>&nbsp;{splash.fields.title}&nbsp;</span>
+          </h2>
+          <p>
+            <span>&nbsp;{splash.fields.description}&nbsp;</span>
+          </p>
+          <a
+            href={splash.fields.url}
+            target={splash.fields.url.startsWith("http") ? "_blank" : "_self"}
+            rel={
+              splash.fields.url.startsWith("http") ? "noopener noreferrer" : ""
+            }
+            className="call-to-action"
+          >
+            {splash.fields.callToAction}
+          </a>
         </div>
       ) : (
         <Loader />
-      )} */}
+      )}
     </>
   );
 };
