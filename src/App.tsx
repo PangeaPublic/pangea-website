@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import SiteHeader from "./SiteHeader";
+import Home from "./Home";
 import WhoWeAre from "./WhoWeAre";
 import WhatWeDo from "./WhatWeDo";
 import Press from "./Press";
@@ -19,7 +20,8 @@ const App = () => (
     <main className="site-main">
       <div className="site-main-inner-wrapper">
         <Routes>
-          <Route path="/" element={<WhoWeAre />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/who-we-are" element={<WhoWeAre />} />
           <Route path="/what-we-do" element={<WhatWeDo />} />
           <Route path="/press" element={<Press />} />
           <Route path="/press/:slug" element={<Article />} />

@@ -11,8 +11,10 @@ const DesktopMenu = () => {
       <ul>
         <li>
           <Link
-            to="/"
-            className={classNames({ selected: location.pathname === "/" })}
+            to="/who-we-are"
+            className={classNames({
+              selected: location.pathname === "/who-we-are",
+            })}
           >
             Who we are
           </Link>
