@@ -51,6 +51,50 @@
   border-color: var(--color-yellow);
 }
 
+@media (max-width: 1023px) {
+  .splash {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 960px) {
+  .splash h2 {
+    font-size: 36px;
+  }
+
+  .splash p {
+    font-size: 28px;
+  }
+
+  .splash .call-to-action {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .splash {
+    aspect-ratio: 1 / 1;
+  }
+
+  .splash h2 {
+    font-size: 24px;
+  }
+
+  .splash p {
+    font-size: 20px;
+  }
+
+  .splash .call-to-action {
+    font-size: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .splash {
+    aspect-ratio: 2 / 3;
+  }
+}
+
 .banner-wrapper {
   display: flex;
   margin-block: 1em;
