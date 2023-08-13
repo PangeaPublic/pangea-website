@@ -37,13 +37,13 @@ const Footer = () => (
           <p className="social-heading">Contact us</p>
           <a
             className="email-address"
-            href="mailto:pangea.resistance@gmail.com"
+            href="mailto:pangea.public@gmail.com"
           >
             <span className="social-icons">
               <FaEnvelope />
             </span>
             <span className="email-address-text">
-              pangea.resistance@gmail.com
+              pangea.public@gmail.com
             </span>
           </a>
         </div>
