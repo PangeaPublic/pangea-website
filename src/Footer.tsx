@@ -35,16 +35,11 @@ const Footer = () => (
       <div className="contact">
         <div>
           <p className="social-heading">Contact us</p>
-          <a
-            className="email-address"
-            href="mailto:pangea.public@gmail.com"
-          >
+          <a className="email-address" href="mailto:pangea.public@gmail.com">
             <span className="social-icons">
               <FaEnvelope />
             </span>
-            <span className="email-address-text">
-              pangea.public@gmail.com
-            </span>
+            <span className="email-address-text">pangea.public@gmail.com</span>
           </a>
         </div>
         <div>
