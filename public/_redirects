@@ -1,0 +1,4 @@
+# Redirect all requests to the base route
+# so that the single page application's router
+# can handle it.
+/*  /index.html 200
